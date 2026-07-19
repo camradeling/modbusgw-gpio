@@ -1,0 +1,12 @@
+[Unit]
+Description=Modbus TCP to GPIO gateway
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/modbusgw-gpio -c /etc/modbusgw-gpio/config.ini
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
