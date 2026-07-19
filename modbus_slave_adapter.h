@@ -1,6 +1,7 @@
 #ifndef MODBUS_SLAVE_ADAPTER_H
 #define MODBUS_SLAVE_ADAPTER_H
 //----------------------------------------------------------------------------------------------------------------------
+#include "modbus_gpio_gateway.h"
 #include "protocol_adapter.h"
 //----------------------------------------------------------------------------------------------------------------------
 class ModbusSlaveAdapter : public ProtocolAdapter

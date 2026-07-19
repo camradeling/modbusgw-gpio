@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include "modbus_gpio_gateway.h"
 #include "modbus_slave_adapter.h"
 //----------------------------------------------------------------------------------------------------------------------
 void ModbusSlaveAdapter::process_packet(std::unique_ptr<MessageBuffer> packet)

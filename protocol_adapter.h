@@ -1,7 +1,12 @@
 #ifndef PROTOCOL_ADAPTER_H
 #define PROTOCOL_ADAPTER_H
 //----------------------------------------------------------------------------------------------------------------------
-#include "modbus_gpio_gateway.h"
+#include "chanlib_export.h"
+#include "modbus_client.h"
+#include <memory>
+using namespace std;
+//----------------------------------------------------------------------------------------------------------------------
+class ModbusGpioGateway;
 //----------------------------------------------------------------------------------------------------------------------
 class ProtocolAdapter
 {
@@ -10,7 +15,7 @@ public:
     ProtocolAdapter(shared_ptr<ModbusGpioGateway> SGW) : MBGW(SGW) {}
     virtual ~ProtocolAdapter() {}
     virtual void process_packet(std::unique_ptr<MessageBuffer> packet) = 0;
-    modbus_pdu_type_e pdu_type;
+    enum modbus_pdu_type_e pdu_type;
 };
 //----------------------------------------------------------------------------------------------------------------------
 #endif/*PROTOCOL_ADAPTER_H*/
